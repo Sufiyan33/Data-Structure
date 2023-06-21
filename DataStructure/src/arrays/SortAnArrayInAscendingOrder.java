@@ -21,6 +21,13 @@ public class SortAnArrayInAscendingOrder {
 		}
 
 		System.out.println("--- By Using Java 8 ---");
+
 		Arrays.stream(arr).boxed().sorted(Integer::compareTo).forEach(System.out::println);
+
+		System.out.println("--- By Using sort methods ---");
+		Arrays.sort(arr);
+		for (int aaa : arr) {
+			System.out.println(aaa);
+		}
 	}
 }

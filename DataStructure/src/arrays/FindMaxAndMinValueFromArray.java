@@ -1,5 +1,7 @@
 package arrays;
 
+import java.util.Arrays;
+
 public class FindMaxAndMinValueFromArray {
 
 	public static void main(String[] args) {
@@ -15,5 +17,9 @@ public class FindMaxAndMinValueFromArray {
 			}
 		}
 		System.out.println("min :: " + min + " max :: " + max);
+
+		System.out.println("By using Java 8");
+		Arrays.stream(arr).boxed().max(Integer::compareTo).ifPresent(System.out::println);
+		Arrays.stream(arr).boxed().min(Integer::compareTo).ifPresent(System.out::println);
 	}
 }

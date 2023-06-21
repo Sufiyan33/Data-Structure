@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.TreeSet;
 
 public class FindUnionOFArrayWhichContainDuplicateData {
-
+	/*
+	 * you can also use HashMap to remove duplciate element Then convert map to list
+	 * and print the data.
+	 */
 	public static void main(String[] args) {
 		int arr1[] = { 1, 2, 2, 2, 3 };
 		int arr2[] = { 2, 3, 3, 4, 5, 5 };

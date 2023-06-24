@@ -12,7 +12,7 @@ public class Print2DArray {
 		 * for (int row = 0; row < arr.length; row++) { for (int col = 0; col <
 		 * arr[row].length; col++) { arr[row][col] = sc.nextInt(); } }
 		 */
-
+		System.out.println("Entered number is :: " + sc);
 		for (int row = 0; row < arr.length; row++) {
 			for (int col = 0; col < arr[row].length; col++) {
 				System.out.println(arr[row][col] + " ");

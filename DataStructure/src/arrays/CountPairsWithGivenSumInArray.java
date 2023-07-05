@@ -15,7 +15,7 @@ public class CountPairsWithGivenSumInArray {
 					result++;
 					// if you want to return index then return i and j;
 					// System.out.println("indexes are :: " + i + "," + j);
-					System.out.println("pairs are :: " + arr[i] + "," + arr[j]);
+					System.out.println("pairs are :: " + "[" + arr[i] + "," + arr[j] + "]");
 				}
 			}
 		}

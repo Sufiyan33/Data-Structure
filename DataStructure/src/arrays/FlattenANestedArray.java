@@ -1,28 +1,40 @@
 package arrays;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class FlattenANestedArray {
 
 	/*
-	 * This program need to fix. its working for first half of an array and not for
-	 * the entire array.
+	 * 1- First traverse array, there value would be integer or a list. 2- If this
+	 * is a integer then directly add in list. 3- If this is a list then again we
+	 * have to iterate list and put all integers in list. 4- This is a recursive
+	 * approach. 5- Simply return the list.
 	 */
 	public static void main(String[] args) {
-		Object[] arr = { 1, 2, new Object[] { 4, new int[] { 5, 6 }, 7 }, 10 };
-		System.out.println("Array size is :: " + arr.length);
-		String deepString = Arrays.deepToString(arr);
+		Object[] arr = { 1, 2, new Object[] { 3, 4, new Object[] { 5, 6 }, 7 }, 10 };
+		Integer[] flattenarr = flattenArray(arr);
+		System.out.println(Arrays.toString(flattenarr));
+	}
 
-		// String replacedString = deepString.replace("[", "").replace("]", "");
-		String replacedString = deepString.replaceAll("[(\\[|\\])]", "");
-		String[] splits = replacedString.split(",");
+	public static Integer[] flattenArray(Object[] inputArray) {
+		if (inputArray == null)
+			return null;
 
-		int[] temp = new int[arr.length];
-		for (int i = 0; i < arr.length; i++) {
-			temp[i] = Integer.parseInt(splits[i].trim());
+		List<Integer> flatList = new ArrayList<>();
+
+		for (Object element : inputArray) {
+			if (element instanceof Integer) {
+				flatList.add((Integer) element);
+			} else if (element instanceof Object[]) {
+				flatList.addAll(Arrays.asList(flattenArray((Object[]) element)));
+			} else {
+				throw new IllegalArgumentException("Input must be a array of integers");
+			}
 		}
 
-		System.out.println(Arrays.toString(temp));
+		return flatList.toArray(new Integer[flatList.size()]);
 
 	}
 }

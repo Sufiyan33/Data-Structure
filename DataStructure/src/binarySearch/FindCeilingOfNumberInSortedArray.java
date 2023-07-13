@@ -4,6 +4,8 @@ public class FindCeilingOfNumberInSortedArray {
 	/*
 	 * Here we need to find out ceiling of number in sorted array. ceiling means
 	 * smallest number in array which is greater than or equal to target element.
+	 * Solution :: when condition break the while loop it means start > end, here
+	 * start is the ceiling number because it is greater to target.
 	 */
 
 	public static void main(String[] args) {

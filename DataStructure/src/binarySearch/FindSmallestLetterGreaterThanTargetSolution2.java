@@ -11,8 +11,8 @@ public class FindSmallestLetterGreaterThanTargetSolution2 {
 	public static void main(String[] args) {
 		char[] letters = { 'c', 'f', 'j' };
 		// char target = 'a';
-		char target = 'j';
-		// char target = 'f';
+		// char target = 'j';
+		char target = 'f';
 		// char target = 'c';
 		// char target = 'z';
 		char number = findSmallestLetter(letters, target);
@@ -25,7 +25,7 @@ public class FindSmallestLetterGreaterThanTargetSolution2 {
 		while (start <= end) {
 			int mid = start + (end - start) / 2;
 
-			if (target > arr[mid]) {
+			if (target >= arr[mid]) {
 				start = mid + 1;
 			} else {
 				end = mid - 1;
@@ -33,7 +33,5 @@ public class FindSmallestLetterGreaterThanTargetSolution2 {
 		}
 
 		return arr[start % arr.length];
-
-		// this need to some correction.
 	}
 }

@@ -16,9 +16,12 @@ public class SearchAnumberInSortedArray {
 
 		int start = 0;
 		int end = arr.length - 1;
+		System.out.println("array length is :: " + arr.length);
+		System.out.println("end is :: " + end);
 
 		while (start <= end) {
 			int mid = start + (end - start) / 2;
+			System.out.println("mid is :: " + mid);
 			/*
 			 * this is equal to (start + end)/2. you can verify. We written like this bc if
 			 * start and end is large then there is a limitation of int. it can't store huge

@@ -12,7 +12,7 @@ public class OrderAgnosticArray {
 	public static void main(String[] args) {
 		// int[] arr = { -18, -9, 0, 2, 3, 5, 6, 12, 22, 34, 50, 55, 60, 99 };
 		int[] arr = { 99, 66, 54, 44, 34, 30, 12, 11, 10, 5, 4, 2, 1, 0, -1, -2 };
-		int target = -2;
+		int target = -1;
 		int index = orderAgnositcBinarySearch(arr, target);
 		System.out.println("target element index is :: " + index);
 	}
@@ -33,10 +33,10 @@ public class OrderAgnosticArray {
 			}
 
 			if (isAsc) { // if arr is in ascending order then follow this.
-				if (target < arr[mid]) {
-					end = mid - 1;
-				} else {
+				if (target > arr[mid]) {
 					start = mid + 1;
+				} else {
+					end = mid - 1;
 				}
 			} else { // if arr is in descending order then follow this.
 				if (target > arr[mid]) {

@@ -10,6 +10,7 @@ public class SingleElementInASortedArray {
 	 */
 	public static void main(String[] args) {
 		int[] arr = { 1, 1, 2, 3, 3, 4, 4, 8, 8 };
+		// int[] arr = { 10, 10, 4, 4, 7, 11, 11, 12, 12, 2, 2 };
 		int element = findSingleElement(arr);
 		System.out.println("single element is :: " + element);
 	}

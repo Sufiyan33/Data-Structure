@@ -18,7 +18,9 @@ public class FindANumberIn2DArray {
 
 	public static void main(String[] args) {
 		int[][] arr = { { 10, 20, 30, 40 }, { 15, 25, 35, 45 }, { 19, 29, 37, 49 }, { 22, 32, 42, 50 } };
-		int target = 50;
+		// int[][] arr = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14,
+		// 15, 16 } };
+		int target = 37;
 		int[] findTarget = searchIn2DArray(arr, target);
 		System.out.println(Arrays.toString(findTarget));
 	}

@@ -18,5 +18,6 @@ public class Print2DArray {
 				System.out.println(arr[row][col] + " ");
 			}
 		}
+		sc.close();
 	}
 }

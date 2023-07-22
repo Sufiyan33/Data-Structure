@@ -14,7 +14,9 @@ public class SortArrayUsingBubbleSort {
 	 */
 	public static void main(String[] args) {
 		// int[] arr = { 3, 1, 4, 5, 2 };
-		int arr[] = { 64, 34, 25, 12, 22, 11, 90 };
+		// int arr[] = { 64, 34, 25, 12, 22, 11, 90 };
+		// int[] arr = { 2, 0, 2, 1, 1, 0 };
+		int[] arr = { 2, 0, 1 };
 		System.out.println("Original array :: " + Arrays.toString(arr));
 		int[] sort = bubbleSort(arr);
 

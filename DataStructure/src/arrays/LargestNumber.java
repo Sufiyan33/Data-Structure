@@ -21,7 +21,7 @@ public class LargestNumber {
 	}
 
 	public static String largestNumber(int[] nums) {
-		String result = "";
+		// String result = "";
 
 		/*
 		 * for (int i = arr.length - 1; i >= 0; i--) { result += arr[i] + ""; }

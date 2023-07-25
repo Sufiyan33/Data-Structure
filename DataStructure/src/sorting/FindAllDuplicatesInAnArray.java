@@ -43,6 +43,12 @@ public class FindAllDuplicatesInAnArray {
 			}
 		}
 
+		// you can also write below code instead of above.
+		/*
+		 * for (int index = 0; index < arr.length; index++) { if (arr[index] != index +
+		 * 1) { list.add(arr[index]); } }
+		 */
+
 		return list;
 	}
 

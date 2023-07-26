@@ -9,8 +9,8 @@ public class SortArrayByParity {
 	 * https://leetcode.com/problems/sort-array-by-parity
 	 */
 	public static void main(String[] args) {
-		// int[] arr = { 3, 1, 2, 4 }; // Output: [2,4,3,1]
-		int[] arr = { 0 }; // Output: [0]
+		int[] arr = { 3, 1, 2, 4 }; // Output: [2,4,3,1]
+		// int[] arr = { 0 }; // Output: [0]
 
 		int[] even = sortArrayByParity(arr);
 		System.out.println("even : " + Arrays.toString(even));

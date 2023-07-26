@@ -13,9 +13,9 @@ public class Find3Sum {
 	 * https://leetcode.com/problems/3sum/
 	 */
 	public static void main(String[] args) {
-		// int[] nums = { -1, 0, 1, 2, -1, -4 }; // Output: [[-1,-1,2],[-1,0,1]]
-		int[] nums = { 0, 1, 1 }; // Output: []
-		// int[] nums = {0,0,0};//Output: [[0,0,0]]
+		int[] nums = { -1, 0, 1, 2, -1, -4 }; // Output: [[-1,-1,2],[-1,0,1]]
+		// int[] nums = { 0, 1, 1 }; // Output: []
+		// int[] nums = { 0, 0, 0 };// Output: [[0,0,0]]
 		List<List<Integer>> threeSum = threeSum(nums);
 		System.out.println("3 sum is :: " + threeSum);
 	}

@@ -12,6 +12,7 @@ public class MultipleBounds<T, U extends Number & Serializable> {
 		this.u = u;
 	}
 
+	@SuppressWarnings("hiding")
 	public <T, U> T print(T t, U u) {
 		System.out.println(t);
 		System.out.println(u);

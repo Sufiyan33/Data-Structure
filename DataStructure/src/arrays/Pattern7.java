@@ -22,6 +22,18 @@ public class Pattern7 {
 	 * 
 	 * Step 4 : identify what to print and print that element.
 	 */
+	/*
+	 *      
+    *
+   **
+  ***
+ ****
+*****
+ ****
+  ***
+   **
+    *
+	 */
 	public static void main(String[] args) {
 		int n = 5;
 		printPattern7(n);

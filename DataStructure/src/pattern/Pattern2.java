@@ -16,6 +16,13 @@ public class Pattern2 {
 	 * 
 	 * Step 4 : identify what to print and print that element.
 	 */
+	/*
+	 * *****
+	 ****
+	 ***
+	 **
+	 *
+	 */
 	public static void main(String[] args) {
 		int n = 5;
 		System.out.println("number of rows are =: " + n);

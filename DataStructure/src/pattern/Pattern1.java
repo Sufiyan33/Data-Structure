@@ -4,6 +4,14 @@ public class Pattern1 {
 	/*
 	 * print 90 degree Triangle.
 	 */
+	
+	/*
+	 * * 
+* * 
+* * * 
+* * * * 
+* * * * *
+	 */
 	public static void main(String[] args) {
 		int n = 5;
 		System.out.println("number of rows are =: " + n);

@@ -8,6 +8,14 @@ public class Pattern5 {
 	 * this is very similar to pattern 1 but only different is here instead of *, we
 	 * are printing column number.
 	 */
+	
+	/*
+	 * 1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 
+	 */
 	public static void main(String[] args) {
 		int n = 5;
 		pattern5(n);

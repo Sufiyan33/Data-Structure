@@ -17,6 +17,18 @@ public class Pattern4 {
 	 * 
 	 * Step 4 : identify what to print and print that element.
 	 */
+
+	/*
+	 * *
+	 **
+	 ***
+	 ****
+	 *****
+	 ****
+	 ***
+	 **
+	 *
+	 */
 	public static void main(String[] args) {
 		int n = 5;
 		pattern4(n);

@@ -4,6 +4,14 @@ public class Pattern3 {
 	/*
 	 * Print 5 line with 5 *.
 	 */
+
+	/*
+	 * *****
+	 *****
+	 *****
+	 *****
+	 *****
+	 */
 	public static void main(String[] args) {
 		int n = 5;
 		pattern3(n);

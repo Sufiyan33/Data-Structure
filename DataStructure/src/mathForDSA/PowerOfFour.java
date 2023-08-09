@@ -1,16 +1,15 @@
 package mathForDSA;
 
-public class PowerOfThree {
+public class PowerOfFour {
 	/*
-	 * 326. Power of Three :: https://leetcode.com/problems/power-of-three/
+	 * 326. Power of Four :: https://leetcode.com/problems/power-of-three/
 	 */
-
 	// Approach
 	/*
 	 * I made one formula by using this you can check any number is power of any
 	 * number.
 	 * 
-	 * Step 1 : use this expression n == 3 power x.
+	 * Step 1 : use this expression n == 4 power x.
 	 * 
 	 * Step 2 : find out the number which was base.
 	 * 
@@ -31,8 +30,8 @@ public class PowerOfThree {
 		if (n < 1)
 			return false;
 
-		double x = (Math.log(n) / (Math.log(3)));
+		double x = (Math.log(n) / (Math.log(4)));
 		int roundNumber = (int) Math.round(x);
-		return (Math.pow(3, roundNumber) == n) ? true : false;
+		return (Math.pow(4, roundNumber) == n) ? true : false;
 	}
 }

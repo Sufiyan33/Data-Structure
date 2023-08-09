@@ -4,13 +4,17 @@ public class FindPeakIndexInMoutainArray {
 
 	/*
 	 * Mountain array is the array where number sorted in ascending and descending
-	 * both. Step 1: if find the mid and compare if mid > mid+1 means you are
-	 * searching in decreasing array but may be your peak is in left side. Hence
-	 * search in left side and for this end = mid; Step 2: if mid < mid + 1 then you
-	 * are increasing part of array but may be peak is in right.Hence search in
-	 * right as well and for this start = mid + 1; step 3: Now in somewhere may be
-	 * you start == end. Hence in this case start while loop from(start<end) and
-	 * return either end or start.
+	 * both.
+	 * 
+	 * Step 1: if find the mid and compare if mid > mid+1 means you are searching in
+	 * decreasing array but may be your peak is in left side. Hence search in left
+	 * side and for this end = mid;
+	 * 
+	 * Step 2: if mid < mid + 1 then you are increasing part of array but may be
+	 * peak is in right.Hence search in right as well and for this start = mid + 1;
+	 * 
+	 * step 3: Now in somewhere may be you start == end. Hence in this case start
+	 * while loop from(start<end) and return either end or start.
 	 */
 	public static void main(String[] args) {
 		// int[] arr = { 0, 1, 0 };

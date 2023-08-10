@@ -5,6 +5,41 @@ public class SearchInRotatedSortedArrayWithDuplicateElement {
 	/*
 	 * 81. Search in Rotated Sorted Array II (duplicate element array).
 	 */
+	/*
+	 * ***2- Binary Search***
+	 * 
+	 * 1- First find Pivot element in array. So that we sure that we have to search
+	 * in left or in right.
+	 * 
+	 * 2- For finding the Pivot follow below steps :
+	 * 
+	 * Case 1: if mid < end and arr[mid] > arr[mid+1], may be the mid is pivot.
+	 * hence return the mid;
+	 * 
+	 * Case 2 : If above is not the case then might be pivot would previous element
+	 * of mid. hence return mid-1;
+	 * 
+	 * Case 3 : Since array have duplicate elements then there is possibility that
+	 * may be start == mid == eend. May be all are qual in this case : if start, end
+	 * and mid are equal then skip start and end ***but*** what if start or end is
+	 * pivot? so check one by one; start < end && arr[start] > arr[start + 1] then
+	 * return start.
+	 * 
+	 * Case 4 : May be end would be Pivot hence check : end > start && arr[end] <
+	 * arr[end - 1] then return end -1;
+	 * 
+	 * 3- If pivot is not found then Simply do normal binary search.
+	 * 
+	 * 4- If Piovt is found then again there are 3 scenarios :
+	 * 
+	 * Case 1 : if arr[pivot] == target then return target.
+	 * 
+	 * Case 2 : if arr[pivot] >= start then do Binar search start = 0 and end =
+	 * pivot-1.
+	 * 
+	 * Case 3 : If case 2 condition is not satisfied then do Binary search start =
+	 * pivot+1 and end = arr.length-1;
+	 */
 	public static void main(String[] args) {
 		int[] arr = { 2, 5, 6, 1, 0, 1, 2 };
 		int target = 0;

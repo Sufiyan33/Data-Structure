@@ -3,7 +3,16 @@ package mathForDSA;
 public class CheckExpression {
 
 	public static void main(String[] args) {
-		float a = 35;
-		System.out.println("answer is :: " + a / 0);
+		float a = 35; // Case : 1
+		System.out.println("Answer :: " + a / 0);
+
+		float b = 35f; // Case : 1
+		System.out.println("Answer :: " + b / 0);
+
+		float f = 35f / 0;
+		System.out.println("Answer :: " + f);
+
+		float ff = 35 / 0;
+		System.out.println("Answer :: " + ff);
 	}
 }

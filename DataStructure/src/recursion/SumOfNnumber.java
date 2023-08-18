@@ -5,7 +5,7 @@ public class SumOfNnumber {
 	 * Program to find sum of N numbers.
 	 */
 	public static void main(String[] args) {
-		long sum = sum(0);
+		long sum = sum(10);
 		System.out.println("Sum of N number is  " + sum);
 	}
 

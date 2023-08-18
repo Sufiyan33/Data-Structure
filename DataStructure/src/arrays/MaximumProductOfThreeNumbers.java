@@ -14,11 +14,23 @@ public class MaximumProductOfThreeNumbers {
 		System.out.println("maximum Product =: " + product);
 	}
 
-	public static int maximumProduct(int[] nums) {
-		int product = 1;
-		for (int num : nums) {
-			product *= num;
+	public static int maximumProduct(int[] arr) {
+		/*
+		 * long product = 1; for (int num : nums) { product *= num; } return (int)
+		 * product;
+		 */
+
+		long product = 1;
+		for (int i = 0; i < arr.length - 2; i++) {
+			int j = i + 1;
+			int k = arr.length - 1;
+			while (j < k) {
+				product = arr[i] * arr[j] * arr[k];
+				if (product > 0) {
+
+				}
+			}
 		}
-		return product;
+		return -1;
 	}
 }

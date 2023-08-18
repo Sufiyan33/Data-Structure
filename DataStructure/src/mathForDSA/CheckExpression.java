@@ -14,5 +14,8 @@ public class CheckExpression {
 
 		float ff = 35 / 0;
 		System.out.println("Answer :: " + ff);
+
+		// Below expression will give compilation issue
+		// for(int i = 99; i>=0; i/9) {}
 	}
 }

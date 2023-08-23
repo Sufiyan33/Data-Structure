@@ -10,5 +10,16 @@ public class Test {
 
 		char ch = 'a';
 		System.out.println(ch + 0);
+
+		String str = "abc";
+		for (int i = 0; i < str.length(); i++) {
+			int digit = str.charAt(i) - '0';
+			System.out.println(digit);
+		}
+
+		byte xy = 127;
+		xy++;
+		xy++;
+		System.out.print(xy);
 	}
 }

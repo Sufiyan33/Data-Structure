@@ -20,6 +20,11 @@ public class MazeProblem {
 
 		System.out.println("All possible paths returning as List := ");
 		System.out.println(pathsReturnList("", 3, 3));
+
+		System.out.println();
+
+		System.out.println("All possible paths moving diagonally as well := ");
+		System.out.println(pathsForDiagonal("", 3, 3));
 	}
 
 	static int moveCount(int row, int col) {
@@ -74,6 +79,36 @@ public class MazeProblem {
 
 		if (col > 1) {
 			ans.addAll(pathsReturnList(p + 'R', row, col - 1));
+		}
+		return ans;
+	}
+
+	/*
+	 * What if ? we can also move diagonally then there are 3 recursive call. but
+	 * for diagonal move row and column will reduce same at a time.
+	 * 
+	 * Remaining code will same like as above.
+	 */
+
+	static ArrayList<String> pathsForDiagonal(String p, int row, int col) {
+		if (row == 1 && col == 1) {
+			ArrayList<String> list = new ArrayList<>();
+			list.add(p);
+			return list;
+		}
+
+		ArrayList<String> ans = new ArrayList<>();
+
+		if (row > 1 && col > 1) {
+			ans.addAll(pathsForDiagonal(p + 'D', row - 1, col - 1));
+		}
+
+		if (row > 1) {
+			ans.addAll(pathsForDiagonal(p + 'V', row - 1, col));
+		}
+
+		if (col > 1) {
+			ans.addAll(pathsForDiagonal(p + 'H', row, col - 1));
 		}
 		return ans;
 	}

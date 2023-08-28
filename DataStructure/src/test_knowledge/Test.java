@@ -21,5 +21,24 @@ public class Test {
 		xy++;
 		xy++;
 		System.out.print(xy);
+
+		System.out.println("--------neww-----------");
+		int[] arr = { 0, 2, 4, 1, 3 };
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = arr[(arr[i] + 3) % arr.length];
+			System.out.println(arr[i]);
+		}
+
+		System.out.println("<--------------------------->");
+
+		int ans = function(1, 1, 1);
+		System.out.println("Result is " + ans);
+	}
+
+	public static int function(int... a) {
+		int sum = 0;
+		for (int i : a)
+			sum += i;
+		return sum;
 	}
 }

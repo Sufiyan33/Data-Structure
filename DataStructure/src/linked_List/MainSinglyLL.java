@@ -1,6 +1,6 @@
 package linked_List;
 
-public class Main {
+public class MainSinglyLL {
 
 	public static void main(String[] args) {
 		CustomSinglyLinkedList list = new CustomSinglyLinkedList();

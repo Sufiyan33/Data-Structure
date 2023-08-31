@@ -39,5 +39,23 @@ public class MainSinglyLL {
 		System.out.println(list.find(2));
 		list.display();
 
+		// Merge two list;
+		System.out.println("--- Merge two sorted list ---");
+		CustomSinglyLinkedList list1 = new CustomSinglyLinkedList();
+		CustomSinglyLinkedList list2 = new CustomSinglyLinkedList();
+
+		list1.addElementInLast(1);
+		list1.addElementInLast(1);
+		list1.addElementInLast(2);
+		list1.display();
+
+		list2.addElementInLast(4);
+		list2.addElementInLast(3);
+		list2.addElementInLast(5);
+		list2.display();
+
+		CustomSinglyLinkedList ans = CustomSinglyLinkedList.mergeTwoList(list1, list2);
+		ans.display();
+
 	}
 }

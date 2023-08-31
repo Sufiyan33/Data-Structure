@@ -167,6 +167,34 @@ public class CustomSinglyLinkedList {
 		tail.next = null;
 	}
 
+	// 2.1 Merge Two sorted Lists
+	public static CustomSinglyLinkedList mergeTwoList(CustomSinglyLinkedList first, CustomSinglyLinkedList second) {
+		Node f = first.head;
+		Node s = second.head;
+
+		CustomSinglyLinkedList ans = new CustomSinglyLinkedList();
+
+		while (f != null && s != null) {
+			if (f.value < s.value) {
+				ans.addElementInLast(f.value);
+				f = f.next;
+			} else {
+				ans.addElementInLast(s.value);
+				s = s.next;
+			}
+		}
+
+		while (f != null) {
+			ans.addElementInLast(f.value);
+			f = f.next;
+		}
+		while (s != null) {
+			ans.addElementInLast(s.value);
+			s = s.next;
+		}
+		return ans;
+	}
+
 	private class Node {
 		private int value;
 		private Node next;

@@ -151,6 +151,22 @@ public class CustomSinglyLinkedList {
 		System.out.println("END");
 	}
 
+	// 83. Remove Duplicates from Sorted List(LeetCode)
+
+	public void removeDuplicates() {
+		Node node = head;
+		while (node.next != null) {
+			if (node.value == node.next.value) {
+				node.next = node.next.next;
+				size--;
+			} else {
+				node = node.next;
+			}
+		}
+		tail = node;
+		tail.next = null;
+	}
+
 	private class Node {
 		private int value;
 		private Node next;

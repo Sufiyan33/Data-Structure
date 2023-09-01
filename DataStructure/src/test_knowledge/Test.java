@@ -29,10 +29,20 @@ public class Test {
 			System.out.println(arr[i]);
 		}
 
+		// ----------------------------------------
+		int[] ar = { 120, 200, 016 };
+		for (int i = 0; i < ar.length; i++) {
+			System.out.print(ar[i] + " ");
+		}
+		System.out.println(Integer.toBinaryString(022));
+		// ----------------------------------------
+
 		System.out.println("<--------------------------->");
 
 		int ans = function(1, 1, 1);
 		System.out.println("Result is " + ans);
+
+		System.out.println("Floor =: " + Math.floor(3.6));
 	}
 
 	public static int function(int... a) {

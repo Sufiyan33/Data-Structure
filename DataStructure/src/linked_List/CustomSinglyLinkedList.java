@@ -195,6 +195,21 @@ public class CustomSinglyLinkedList {
 		return ans;
 	}
 
+	// 141. Linked List Cycle
+	public boolean hasCycle(Node node) {
+		Node fast = head;
+		Node slow = head;
+
+		while (fast != null && slow != null) {
+			fast = fast.next.next;
+			slow = slow.next;
+			if (slow == fast) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	private class Node {
 		private int value;
 		private Node next;

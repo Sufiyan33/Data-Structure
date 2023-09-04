@@ -87,6 +87,43 @@ public class LeetCodeProblem {
 		return s;
 	}
 
+	// Question : 202. Happy Number (If a number digits square sum equal to 1)
+	/*
+	 * Approach :
+	 * 
+	 * 1- initialize two pointer slow and fast.
+	 * 
+	 * 2- Find square of digits
+	 * 
+	 * 3- if cycle present means not a happy number.
+	 */
+
+	public boolean isHappy(int n) {
+		int slow = n;
+		int fast = n;
+
+		do {
+			slow = findSquare(slow);
+			fast = findSquare(findSquare(fast));
+		} while (slow != fast);
+
+		if (slow == 1) {
+			return true;
+		}
+		return false;
+	}
+
+	// Find Square of a number;
+	private int findSquare(int number) {
+		int ans = 0;
+		while (number > 0) {
+			int reminder = number % 10;
+			ans += reminder * reminder;
+			number /= 10;
+		}
+		return ans;
+	}
+
 	// Adding first node or value in node.
 	public void addFirstNode(int value) {
 		Node node = new Node(value);

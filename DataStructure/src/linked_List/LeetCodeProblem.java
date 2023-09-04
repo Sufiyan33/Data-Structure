@@ -87,7 +87,7 @@ public class LeetCodeProblem {
 		return s;
 	}
 
-	// Question : 202. Happy Number (If a number digits square sum equal to 1)
+	// Question 3 : 202. Happy Number (If a number digits square sum equal to 1)
 	/*
 	 * Approach :
 	 * 
@@ -123,6 +123,54 @@ public class LeetCodeProblem {
 		}
 		return ans;
 	}
+
+	// Question 4 : 206. Reverse Linked List
+	/*
+	 * Approach :
+	 * 
+	 * 1- Initialize 3 pointers : previous, present and next.
+	 * 
+	 * 2- At initial stage previous will point to null, Present point to head and
+	 * Next will point to present.next;
+	 * 
+	 * 3- At each move they will swap their value.
+	 * 
+	 * 4- But keep in mind that when next move ahead then need to check NPE.
+	 * 
+	 * 5- If present pointer will reach to end means point to null then previous
+	 * pointer will point to last node (tail).
+	 * 
+	 * 6- Then simply return previous node.
+	 */
+
+	public Node reverseList(Node head) {
+		if (head == null) {
+			return head;
+		}
+
+		Node prev = null;
+		Node pres = head;
+		Node next = pres.next;
+
+		while (pres != null) {
+			pres.next = prev;
+			prev = pres;
+			pres = next;
+			if (next != null) {
+				next = next.next;
+			}
+		}
+		head = prev;
+		return head;
+	}
+
+	// Question 5 : 92. Reverse Linked List II
+
+	/*
+	 * public Node reverseBetween(Node head, int left, int right) {
+	 * 
+	 * }
+	 */
 
 	// Adding first node or value in node.
 	public void addFirstNode(int value) {

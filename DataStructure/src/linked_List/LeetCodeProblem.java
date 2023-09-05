@@ -165,6 +165,9 @@ public class LeetCodeProblem {
 	}
 
 	// Question 5 : 92. Reverse Linked List II
+	/*
+	 * When given in a range or reverse sublist of Linked List.
+	 */
 	public Node reverseBetween(Node head, int left, int right) {
 		if (left == right) {
 			return head;
@@ -200,6 +203,48 @@ public class LeetCodeProblem {
 
 		newEnd.next = current;
 		return head;
+	}
+
+	// Question 6 : 234. Palindrome Linked List
+	/*
+	 * You need to check if given list is Palindrome or not.
+	 * 
+	 * Step 1 : Find middle of list.
+	 * 
+	 * 2 : Reverse the 2nd half of list.
+	 * 
+	 * 3 : Compare the first half and second half.
+	 * 
+	 * 4: Re-reverse the second part.
+	 */
+
+	public boolean isPalindrome(Node head) {
+		Node mid = middleNode(head);
+		Node headSecond = reverseList(mid);
+		Node reverseHead = headSecond;
+
+		// Now compare 1st half and second half.
+		while (head != null && headSecond != null) {
+			if (head.value != headSecond.value) {
+				break;
+			}
+			head = head.next;
+			headSecond = headSecond.next;
+		}
+		// Now re-reverse List
+		reverseList(reverseHead);
+		return head == null || headSecond == null;
+	}
+
+	private Node middleNode(Node head) {
+		Node slow = head;
+		Node fast = head;
+
+		while (fast != null && fast.next != null) {
+			fast = fast.next.next;
+			slow = slow.next;
+		}
+		return slow;
 	}
 
 	// Adding first node or value in node.

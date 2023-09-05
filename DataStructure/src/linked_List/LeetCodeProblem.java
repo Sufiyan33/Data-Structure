@@ -236,6 +236,7 @@ public class LeetCodeProblem {
 		return head == null || headSecond == null;
 	}
 
+	// Find middle node of List.
 	private Node middleNode(Node head) {
 		Node slow = head;
 		Node fast = head;
@@ -245,6 +246,130 @@ public class LeetCodeProblem {
 			slow = slow.next;
 		}
 		return slow;
+	}
+
+	// Question 6 : 143. Reorder List
+	/*
+	 * Here, you need to re-order list with alternative node.
+	 * 
+	 * Step 1 : Find middle of List.
+	 * 
+	 * Step 2 : Reverse second half.
+	 * 
+	 * Step 3 : Now take two pointer first & second.
+	 * 
+	 * Step 4 : Move both pointer one by one & add value accordingly.
+	 */
+
+	public void reorderList(Node head) {
+		if (head == null || head.next == null) {
+			return;
+		}
+		Node mid = middleNode(head);
+		Node headFirst = head;
+		Node headSecond = reverseList(mid);
+
+		while (headFirst != null && headSecond != null) {
+			Node temp = headFirst.next;
+			headFirst.next = headSecond;
+			headFirst = temp;
+
+			temp = headSecond.next;
+			headSecond.next = headFirst;
+			headSecond = temp;
+		}
+
+		if (headFirst != null) {
+			headFirst.next = null;
+		}
+	}
+
+	// Question 7 : 61. Rotate List
+	/*
+	 * Given the head of a linked list, rotate the list to the right by k places.
+	 * 
+	 * This is a very similar that what we are doing in array to rotate it 3 times
+	 * or 2 times. Same concept are here.
+	 * 
+	 * Step 1 : Find Last node and connect with head.
+	 * 
+	 * Step 2 : How many times need to skip, skip = length - k.
+	 */
+
+	public Node rotateRight(Node head, int k) {
+		if (k <= 0 || head == null || head.next == null) {
+			return head;
+		}
+
+		Node last = head;
+		int length = 1;
+
+		while (last.next != null) {
+			last = last.next;
+			length++;
+		}
+
+		last.next = head;
+		int rotation = k % length;
+		int skip = length - rotation;
+		Node newLast = head;
+
+		for (int i = 0; i < skip - 1; i++) {
+			newLast = newLast.next;
+		}
+		head = newLast.next;
+		newLast.next = null;
+		return head;
+	}
+
+	// Question 8 : 25. Reverse Nodes in k-Groups
+	public Node reverseKGroup(Node head, int k) {
+		if (k <= 1 || head == null) {
+			return head;
+		}
+
+		Node current = head;
+		Node prev = null;
+
+		int length = getLength(head);
+		int count = length / k;
+		while (count > 0) {
+			Node last = prev;
+			Node newEnd = current;
+
+			Node next = current.next;
+			for (int i = 0; current != null && i < k; i++) {
+				current.next = prev;
+				prev = current;
+				current = next;
+				if (next != null) {
+					next = next.next;
+				}
+			}
+
+			if (last != null) {
+				last.next = prev;
+			} else {
+				head = prev;
+			}
+
+			newEnd.next = current;
+
+			prev = newEnd;
+			count--;
+		}
+		return head;
+	}
+
+	// Find length
+	public int getLength(Node head) {
+		Node node = head;
+		int length = 0;
+		while (node != null) {
+			length++;
+			node = node.next;
+		}
+		return length;
 	}
 
 	// Adding first node or value in node.

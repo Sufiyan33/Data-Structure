@@ -20,7 +20,6 @@ public class LeetCodeProblem {
 	 * Again this is the same question like as previous just run two pointer when
 	 * fast pointer then count length;
 	 */
-
 	public int countLength(Node node) {
 		Node slow = head;
 		Node fast = head;
@@ -383,6 +382,7 @@ public class LeetCodeProblem {
 		}
 
 		size += 1;
+		System.out.println("size := " + size);
 	}
 
 	// Adding element in the last.

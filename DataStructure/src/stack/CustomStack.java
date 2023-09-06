@@ -41,10 +41,9 @@ public class CustomStack {
 		this.data = new int[size];
 	}
 
-	public boolean push(int item) {
+	public boolean push(int item) throws StackException {
 		if (isFull()) {
-			System.out.println("Stack is already filled !!!");
-			return false;
+			throw new StackException("You can't push because stack is already filled 😒 !!!");
 		}
 
 		ptr++;
@@ -54,7 +53,7 @@ public class CustomStack {
 
 	public int pop() throws StackException {
 		if (isEmpty()) {
-			throw new StackException("Can not pop from empty stack 😒 !!!");
+			throw new StackException("You can't pop from empty stack 😒 !!!");
 		}
 		/*
 		 * int removed = data[ptr]; ptr--; return removed;

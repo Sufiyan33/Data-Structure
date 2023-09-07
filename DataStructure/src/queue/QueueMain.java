@@ -1,4 +1,4 @@
-package stack;
+package queue;
 
 public class QueueMain {
 
@@ -12,10 +12,9 @@ public class QueueMain {
 		queue.insert(12);
 		queue.insert(15);
 		queue.insert(14);
-		queue.insert(19);
-		queue.insert(20);
-		queue.insert(20);
-
+		/*
+		 * queue.insert(19); queue.insert(20); queue.insert(20);
+		 */
 		queue.display();
 
 		System.out.println(queue.remove());

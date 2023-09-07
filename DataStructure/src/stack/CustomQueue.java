@@ -30,17 +30,17 @@ public class CustomQueue {
 		this.data = new int[size];
 	}
 
-	public boolean insert(int item) {
+	public boolean insert(int item) throws QueueException {
 		if (isFull()) {
-			return false;
+			throw new QueueException("You can't add because queue is full 😒😒😒");
 		}
 		data[end++] = item;
 		return true;
 	}
 
-	public int remove() throws Exception {
+	public int remove() throws QueueException {
 		if (isEmpty()) {
-			throw new Exception("Can't remove because queue is empty 😒😒😒");
+			throw new QueueException("Can't remove because queue is empty 😒😒😒");
 		}
 
 		// Removing first element as Queue worked on FIFO.
@@ -57,9 +57,9 @@ public class CustomQueue {
 		return removed;
 	}
 
-	public int front() throws Exception {
+	public int front() throws QueueException {
 		if (isEmpty()) {
-			throw new Exception("Can't show front value because queue is empty 😒😒😒");
+			throw new QueueException("Can't show front value because queue is empty 😒😒😒");
 		}
 		return data[0];
 	}

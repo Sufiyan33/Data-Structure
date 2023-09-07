@@ -76,7 +76,7 @@ public class CustomCircularQueue {
 		}
 		int i = front;
 		do {
-			System.out.print(data[i] + " <- ");
+			System.out.print(data[i] + " -> ");
 			i++;
 			i %= data.length;
 		} while (i != end);

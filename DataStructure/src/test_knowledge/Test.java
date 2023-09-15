@@ -1,5 +1,8 @@
 package test_knowledge;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Test {
 	public static void main(String[] args) {
 		short x = 10;
@@ -43,6 +46,24 @@ public class Test {
 		System.out.println("Result is " + ans);
 
 		System.out.println("Floor =: " + Math.floor(3.6));
+
+		int aar[] = new int[2];
+		System.out.println(aar[0]);
+		System.out.println(aar[1]);
+
+		{
+			int arr1[] = { 1, 2, 3 };
+			int arr2[] = { 1, 2, 3 };
+			if (arr1 == arr2)
+				System.out.println("Same");
+			else
+				System.out.println("Not same");
+		}
+
+		List<Integer> n = Arrays.asList(1, 2, 3, 4, 5);
+		int sum = n.stream().filter(a -> a % 2 == 0).mapToInt(Integer::intValue).sum();
+		System.out.println("result :: = " + sum);
+
 	}
 
 	public static int function(int... a) {

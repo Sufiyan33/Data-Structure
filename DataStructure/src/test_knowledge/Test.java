@@ -1,5 +1,7 @@
 package test_knowledge;
 
+import static java.lang.System.out;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -63,6 +65,18 @@ public class Test {
 		List<Integer> n = Arrays.asList(1, 2, 3, 4, 5);
 		int sum = n.stream().filter(a -> a % 2 == 0).mapToInt(Integer::intValue).sum();
 		System.out.println("result :: = " + sum);
+
+		System.out.println("-------------------------------");
+		Double object = new Double("2.4");
+		int a = object.intValue();
+		byte b = object.byteValue();
+		float d = object.floatValue();
+		double c = object.doubleValue();
+
+		System.out.println(a + b + c + d);
+		System.out.println("------------------------");
+
+		out.println("GeeksforGeeks");
 
 	}
 

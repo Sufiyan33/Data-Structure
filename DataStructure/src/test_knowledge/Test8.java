@@ -6,12 +6,12 @@ public class Test8 {
 		int a = 10;
 		System.out.println(a-- * a--);
 
-		String s = null;
-		s = s.concat("alfaz");
-		System.out.println(s);
+		/*
+		 * String s = null; s = s.concat("alfaz"); System.out.println(s);
+		 */
 
-		Integer i1 = 130;
-		Integer i2 = 130;
+		Integer i1 = 127;
+		Integer i2 = 127;
 
 		System.out.println(i1 == i2);
 

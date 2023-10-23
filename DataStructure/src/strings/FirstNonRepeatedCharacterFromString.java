@@ -1,6 +1,5 @@
 package strings;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -18,7 +17,7 @@ public class FirstNonRepeatedCharacterFromString {
 
 		System.out.println("With Classic for loop & HashMap");
 
-		HashMap<Character, Integer> map = new HashMap<>();
+		LinkedHashMap<Character, Integer> map = new LinkedHashMap<>();
 		for (int i = 0; i < input.length(); i++) {
 			char ss = input.charAt(i);
 			if (map.containsKey(ss)) {

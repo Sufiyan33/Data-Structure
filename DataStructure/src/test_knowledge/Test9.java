@@ -1,6 +1,6 @@
 package test_knowledge;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Test9 {
@@ -16,7 +16,7 @@ public class Test9 {
 		String s2 = new String("xyz");
 		System.out.println(s1 == s2);
 
-		final List<Integer> list = new ArrayList<>();
+		final List<Integer> list = Arrays.asList(1, 2, 3);
 		list.add(7);
 		System.out.println(list);
 	}

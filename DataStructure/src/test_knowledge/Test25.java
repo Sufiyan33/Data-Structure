@@ -1,4 +1,4 @@
-package arrays;
+package test_knowledge;
 
 public class Test25 {
 

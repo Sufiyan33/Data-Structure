@@ -15,13 +15,12 @@ public class IteratorCursor {
 
 		Iterator<Integer> i = list.iterator();
 		while (i.hasNext()) {
-			Integer value = i.next();
-			System.out.println(value);
-
-			if (value.equals(89)) {
+			if (i.next() % 2 == 1) {
 				i.remove();
 			}
 		}
-
+		for (Integer l : list) {
+			System.out.println(l);
+		}
 	}
 }

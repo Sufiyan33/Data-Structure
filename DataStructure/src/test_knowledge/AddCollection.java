@@ -1,6 +1,8 @@
 package test_knowledge;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Vector;
 
 public class AddCollection {
@@ -21,8 +23,20 @@ public class AddCollection {
 
 		System.out.println(v);
 
-		for (Integer vv : v) {
-			System.out.println(vv);
-		}
+		LinkedList<Integer> ll = new LinkedList<>(v);
+		ll.add(30);
+		ll.add(31);
+		ll.add(32);
+
+		System.out.println(ll);
+
+		HashSet<Integer> set = new HashSet<>(v);
+		set.add(null);
+		set.add(40);
+		set.add(41);
+		set.add(42);
+
+		System.out.println(set);
+
 	}
 }

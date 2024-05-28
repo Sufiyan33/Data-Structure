@@ -10,14 +10,25 @@ public class FindCeilingOfNumberInSortedArray {
 
 	public static void main(String[] args) {
 		int[] arr = { 2, 4, 5, 9, 14, 16, 18 };
-		int target = 15;
-		int result = ceilingNumber(arr, target);
-		System.out.println("ceiling number of target is :: " + result);
+		int target = 18;
+		int index = ceilingNumber(arr, target);
+		
+		if(index != -1) {
+			System.out.println("ceiling number of target is :: " + index);
+		}else {
+			System.out.println("ceiling number of target is not found ");
+		}
 	}
 
 	public static int ceilingNumber(int[] arr, int target) {
 		int start = 0, end = arr.length - 1;
 
+		if(arr.length == -1)
+			return -1;
+		
+		if(target > arr[end])
+			return -1;
+		
 		while (start <= end) {
 			int mid = start + (end - start) / 2;
 

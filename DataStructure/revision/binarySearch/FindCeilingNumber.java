@@ -7,10 +7,14 @@ public class FindCeilingNumber {
 	 */
 	public static void main(String[] args) {
 		int arr []= {1,12,13,14,18,20,21,24};
-		int target = 23;
+		int target = 25;
 		
-		int result  = ceilingNumber(arr, target);
-		System.out.println("Ceiling number at index :: " + result);
+		int index  = ceilingNumber(arr, target);
+		if(index == -1) {
+			System.out.println("Ceiling number is not found");
+		}else {
+			System.out.println("Ceiling number at index :: " + index);	
+		}
 	}
 	
 	static int ceilingNumber(int[] arr, int target) {
@@ -19,6 +23,9 @@ public class FindCeilingNumber {
 		int end = arr.length-1;
 		
 		if(arr.length == 0)
+			return -1;
+		
+		if(target > arr[end])
 			return -1;
 		
 		while(start<= end) {

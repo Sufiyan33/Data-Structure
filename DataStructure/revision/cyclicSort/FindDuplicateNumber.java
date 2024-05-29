@@ -33,7 +33,7 @@ public class FindDuplicateNumber {
 				return arr[index];
 			}
 		}
-		return arr.length;
+		return -1;
 	}
 
 	static void swap(int[] arr, int first, int second) {

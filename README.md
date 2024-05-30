@@ -19,8 +19,15 @@ I already added lots of interview questions & their code. You can check below co
 - Bitwise
 - Matchmatical
 
-
-- Array
-- Strings
-- ArrayList
-- 
+# Data Structures
+ - Array
+ - Strings
+ - ArrayList
+ - LinkedList
+ - Matrix
+ - Queue
+ - Stack
+ - Hash
+ - Heap
+ - Tree
+ - Graph

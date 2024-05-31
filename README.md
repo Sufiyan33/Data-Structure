@@ -1,6 +1,6 @@
 # Data-Structure
-Hey, I have started learning of Data Structure & algorithm. I will also try to add all possible solutions, code, instruction that how to solve.
-I already added lots of interview questions & their code. You can check below content :
+Hi, I have started a series of Data Structure and algorithms where added all the possible questions (which asked in interviews.), solutions with code & steps. 
+Do check out now.
 
 # Algorithms :
 - Searching

@@ -11,6 +11,9 @@ public class FindPurmutationsOfString {
 
 		ArrayList<String> ans = permutationsReturn("", "123", new ArrayList<String>());
 		System.out.println(ans);
+
+		ArrayList<String> res = permutation("", "123");
+		System.out.println(res);
 	}
 
 	static void permutations(String p, String up) {
@@ -37,6 +40,7 @@ public class FindPurmutationsOfString {
 
 	}
 
+	// Add list in argument then return this list.
 	static ArrayList<String> permutationsReturn(String p, String up, ArrayList<String> list) {
 
 		if (up.isEmpty()) {
@@ -59,5 +63,27 @@ public class FindPurmutationsOfString {
 			permutationsReturn(first + ch + second, up.substring(1), list);
 		}
 		return list;
+	}
+
+	static ArrayList<String> permutation(String p, String up) {
+		if (up.isEmpty()) {
+			ArrayList<String> list = new ArrayList<>();
+			list.add(p);
+			return list;
+		}
+
+		char ch = up.charAt(0);
+
+		// this for local call.
+		ArrayList<String> ans = new ArrayList<>();
+
+		for (int i = 0; i < p.length() + 1; i++) {
+
+			String first = p.substring(0, i);
+			String second = p.substring(i, p.length());
+
+			ans.addAll(permutation(first + ch + second, up.substring(1)));
+		}
+		return ans;
 	}
 }

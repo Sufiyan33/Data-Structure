@@ -3,7 +3,8 @@ package permutation;
 public class CountAllPermutations {
 
 	/*
-	 * Count all the permutations
+	 * Count all the permutations. All logics are same only thing is return their
+	 * each recursive call count.
 	 */
 	public static void main(String[] args) {
 		int count = countPermutations("", "abcd");

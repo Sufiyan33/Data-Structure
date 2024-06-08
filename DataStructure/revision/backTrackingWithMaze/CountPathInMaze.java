@@ -1,9 +1,9 @@
 package backTrackingWithMaze;
 
-public class MazeProblems {
+public class CountPathInMaze {
 
 	/*
-	 * FInd how many ways to reach destination in maze.
+	 * Count how many ways to reach destination in maze.
 	 */
 	public static void main(String[] args) {
 		int count = findWay(4, 4);

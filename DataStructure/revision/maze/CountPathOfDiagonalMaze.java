@@ -1,6 +1,6 @@
 package maze;
 
-public class PrintPathOfDiagonalMaze {
+public class CountPathOfDiagonalMaze {
 
 	/*
 	 * Here, we can traverse in 3 directions : down, right and diagonal.

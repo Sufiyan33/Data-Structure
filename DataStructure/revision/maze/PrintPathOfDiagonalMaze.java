@@ -1,4 +1,4 @@
-package backTrackingWithMaze;
+package maze;
 
 public class PrintPathOfDiagonalMaze {
 

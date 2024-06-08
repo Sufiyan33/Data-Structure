@@ -1,4 +1,4 @@
-package backTrackingWithMaze;
+package maze;
 
 import java.util.ArrayList;
 

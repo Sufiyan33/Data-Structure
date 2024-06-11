@@ -72,6 +72,11 @@ public class SLL {
 			return;
 		}
 
+		// What if index in not found then throw Exception.
+		if (index > size) {
+			throw new IndexOutOfBoundsException();
+		}
+
 		/*
 		 * Here, you need to reach till index-1, once reach then add new node & its
 		 * value.
@@ -84,6 +89,89 @@ public class SLL {
 		Node node = new Node(data, temp.next);
 		temp.next = node; // current node pointing to next.
 		size++;
+	}
+
+	/*
+	 * Let's delete node from all positions. If you want to return then add return
+	 * type other wise take void.
+	 */
+
+	public int deleteFromBegning() throws Exception {
+		if (head == null) {
+			throw new Exception("You can't delet because List is empty");
+		}
+
+		int value = head.data;
+		head = head.next;
+
+		if (head == null) {
+			tail = null;
+		}
+		return value;
+	}
+
+	/*
+	 * Delete a node from last.
+	 */
+
+	/*
+	 * public void deleteFromLast() { Node temp = head; for (int i = 1; i < size -
+	 * 1; i++) { temp = temp.next; } temp.next = null; tail = temp; }
+	 */
+	/*
+	 * Above method will also delete from last but lets make some more organized.
+	 * First find index of each particular node then make 2nd last node as tail.
+	 */
+
+	public Node getNode(int index) {
+		Node node = head;
+		for (int i = 0; i < index; i++) {
+			node = node.next;
+		}
+		return node;
+	}
+
+	public int deleteFromLast() throws Exception {
+		if (size <= 1) {
+			return deleteFromBegning();
+		}
+
+		Node secondLast = getNode(size - 2);
+		tail = secondLast;
+		int value = tail.data;
+		tail.next = null;
+
+		return value;
+	}
+
+	public int deleteFromAtPosition(int index) throws Exception {
+		if (index == 0) {
+			return deleteFromBegning();
+		}
+
+		if (index == size) {
+			return deleteFromLast();
+		}
+
+		Node findNode = getNode(index - 1);
+		int value = findNode.next.data;
+		findNode.next = findNode.next.next;
+
+		return value;
+	}
+
+	/*
+	 * Question : for value = 4 find node.
+	 */
+	public Node find(int value) {
+		Node node = head;
+		while (node != null) {
+			if (node.data == value) {
+				return node;
+			}
+			node = node.next;
+		}
+		return null;
 	}
 
 	/*

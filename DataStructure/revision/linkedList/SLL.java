@@ -206,6 +206,27 @@ public class SLL {
 
 		return ans;
 	}
+
+	/*
+	 * Linked List cycle. use slow and fast pointer.
+	 * 
+	 * If slow == fast pointer it means cycle present. If any of them point to null.
+	 * it means cycle is not present.
+	 */
+
+	public boolean cycle() {
+		Node fast = head;
+		Node slow = head;
+
+		while (head != null) {
+			if (slow == fast) {
+				return true;
+			}
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+		return false;
+	}
 	/*
 	 * Now let's display list. At the time of displaying do not change head
 	 * locations. Head always point to the first node. THen how to do?

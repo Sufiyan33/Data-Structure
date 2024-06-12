@@ -175,6 +175,38 @@ public class SLL {
 	}
 
 	/*
+	 * merge two sorted list.
+	 */
+	public static SLL merge(SLL first, SLL second) {
+		Node f = first.head;
+		Node s = second.head;
+
+		SLL ans = new SLL();
+
+		while (f != null && s != null) {
+			if (f.data < s.data) {
+				ans.insertLast(f.data);
+				f = f.next;
+			} else {
+				ans.insertLast(s.data);
+				s = s.next;
+			}
+		}
+
+		// If some items remain in list first then add.
+		while (f != null) {
+			ans.insertLast(f.data);
+			f = f.next;
+		}
+
+		// If some items remain in second list then add.
+		while (s != null) {
+			ans.insertLast(s.data);
+		}
+
+		return ans;
+	}
+	/*
 	 * Now let's display list. At the time of displaying do not change head
 	 * locations. Head always point to the first node. THen how to do?
 	 * 

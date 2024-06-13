@@ -325,6 +325,12 @@ public class SLL {
 
 	// 2 : Reverse LinkedList in-place means don't take extra space.
 	public void reverse(Node node) {
+
+		// If method return then add below code.
+		/*
+		 * if (head == null) return head;
+		 */
+
 		if (size < 2)
 			return;
 

@@ -323,7 +323,7 @@ public class SLL {
 		tail.next = null;
 	}
 
-	// 2 : Traverse LinkedList in-place means don't take extra space.
+	// 2 : Reverse LinkedList in-place means don't take extra space.
 	public void reverse(Node node) {
 		if (size < 2)
 			return;

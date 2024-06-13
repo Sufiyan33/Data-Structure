@@ -299,6 +299,29 @@ public class SLL {
 
 		return s;
 	}
+
+	/*
+	 * Reverse LinkedList, we can do this in two ways :
+	 * 
+	 * 1 : By using recursion.
+	 * 
+	 * 2 : By using in-place reversal (Don't take extra space).
+	 */
+	// 1 : If head & tail is given in question.
+	public void reverseList(Node node) {
+
+		// Base conditions
+		if (node == tail) {
+			head = tail;
+			return;
+		}
+
+		reverseList(node.next);
+
+		tail.next = node;
+		tail = node;
+		tail.next = null;
+	}
 	/*
 	 * Now let's display list. At the time of displaying do not change head
 	 * locations. Head always point to the first node. THen how to do?

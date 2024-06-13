@@ -322,6 +322,28 @@ public class SLL {
 		tail = node;
 		tail.next = null;
 	}
+
+	// 2 : Traverse LinkedList in-place means don't take extra space.
+	public void reverse(Node node) {
+		if (size < 2)
+			return;
+
+		Node prev = null;
+		Node present = head;
+		Node next = present.next;
+
+		while (present != null) {
+			present.next = prev;
+			prev = present;
+			present = next;
+
+			if (next != null) {
+				next = next.next;
+			}
+		}
+
+		head = prev;
+	}
 	/*
 	 * Now let's display list. At the time of displaying do not change head
 	 * locations. Head always point to the first node. THen how to do?

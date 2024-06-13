@@ -227,6 +227,30 @@ public class SLL {
 		}
 		return false;
 	}
+
+	/*
+	 * Find length of cycle. If cycle exist then find length.
+	 * 
+	 * Use above detectCylce code and make some changes.
+	 */
+	public int cycLength(Node node) {
+		Node fast = head;
+		Node slow = head;
+
+		while (head != null) {
+			if (slow == fast) {
+				// Calculate length.
+				Node temp = slow;
+				int length = 0;
+				do {
+					temp = temp.next;
+					length++;
+				} while (temp != slow);
+				return length;
+			}
+		}
+		return 0;
+	}
 	/*
 	 * Now let's display list. At the time of displaying do not change head
 	 * locations. Head always point to the first node. THen how to do?

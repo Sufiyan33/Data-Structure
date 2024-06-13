@@ -33,6 +33,7 @@ public class Main {
 		 * // that's why merge method made static. SLL ans = SLL.merge(first, second);
 		 * ans.display();
 		 */
+		list.cycle();
 
 	}
 }

@@ -251,6 +251,54 @@ public class SLL {
 		}
 		return 0;
 	}
+
+	/*
+	 * Return cycle begin node, if cycle not present then return null.
+	 * 
+	 * 1 : First find length of cycle.
+	 * 
+	 * 2 : Move s pointer ahead by length of cycle times.
+	 * 
+	 * 3 : Move both s & f pointer one by one, it will meet at start.
+	 */
+
+	public Node findCycleStart(Node head) {
+		int length = 0;
+
+		Node fast = head;
+		Node slow = head;
+
+		while (fast != null & fast.next != null) {
+			fast = fast.next.next;
+			slow = slow.next;
+			if (fast == slow) {
+				length = cycLength(slow);
+				break;
+			}
+		}
+
+		// if no cycle present return null
+		if (length == 0) {
+			return null;
+		}
+		// find start node.
+		Node f = head;
+		Node s = head;
+
+		// move s ahead of length time.
+		while (length > 0) {
+			s = s.next;
+			length--;
+		}
+
+		// move both s & slow pointer one by one.
+		while (f != s) {
+			f = f.next;
+			s = s.next;
+		}
+
+		return s;
+	}
 	/*
 	 * Now let's display list. At the time of displaying do not change head
 	 * locations. Head always point to the first node. THen how to do?

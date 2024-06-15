@@ -29,10 +29,10 @@ public class ImplementStaticStack {
 		return true;
 	}
 
-	public int pop() {
+	public int pop() throws StackExceptions {
 		if (isEmpty()) {
-			System.out.println("Stack is empty...");
-			return -1;
+			// Let's throw exception
+			throw new StackExceptions("Cann't pop beacuse stack is empty...");
 		}
 
 		/*
@@ -44,10 +44,9 @@ public class ImplementStaticStack {
 		return data[ptr--];
 	}
 
-	public int peek() {
+	public int peek() throws StackExceptions {
 		if (isEmpty()) {
-			System.out.println("Stack is empty...");
-			return -1;
+			throw new StackExceptions("Stack is empty...");
 		}
 
 		int value = data[ptr];

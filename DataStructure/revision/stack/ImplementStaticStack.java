@@ -6,8 +6,8 @@ public class ImplementStaticStack {
 	 * Here, I'm going to implement custom stack using size, pointer and array.
 	 */
 
-	private int data[];
-	private static final int DEFAULT_SIZE = 10;
+	int data[];
+	static final int DEFAULT_SIZE = 10;
 
 	int ptr = -1; // Represent as index
 
@@ -18,10 +18,10 @@ public class ImplementStaticStack {
 		this.data = new int[size];
 	}
 
-	public boolean push(int items) {
+	public boolean push(int items) throws StackExceptions {
 		if (isFull()) {
-			System.out.println("Stack is full...");
-			return false;
+
+			throw new StackExceptions("Stack is full...");
 		}
 		
 		ptr++;
@@ -55,12 +55,12 @@ public class ImplementStaticStack {
 		return value;
 	}
 
-	private boolean isFull() {
+	boolean isFull() {
 
 		return ptr == data.length - 1;
 	}
 
-	private boolean isEmpty() {
+	boolean isEmpty() {
 		return ptr == -1;
 	}
 

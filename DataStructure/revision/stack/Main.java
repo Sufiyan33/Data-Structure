@@ -5,7 +5,9 @@ public class Main {
 	public static void main(String[] args) throws StackExceptions {
 
 		// passing size of array in constructor.
-		ImplementStaticStack s = new ImplementStaticStack(5);
+		// DynamicStacks s = new DynamicStacks();
+
+		ImplementStaticStack s = new DynamicStacks();
 		
 		s.push(1);
 		s.push(2);
@@ -13,14 +15,21 @@ public class Main {
 		s.push(4);
 
 		s.push(5);
+		s.push(6);
+		s.push(6);
+		s.push(6);
 		
-		System.out.println(s.peek());
+		// System.out.println(s.peek());
 
 		System.out.println(s.pop());
 		System.out.println(s.pop());
 		System.out.println(s.pop());
 		System.out.println(s.pop());
 		System.out.println(s.pop());
+		System.out.println(s.pop());
+		System.out.println(s.pop());
+		System.out.println(s.pop());
+
 
 
 

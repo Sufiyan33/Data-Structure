@@ -19,5 +19,21 @@ public class CircularMain {
 		System.out.println(circular.removeData());
 
 		circular.display();
+
+		DynamicCircularQueue dcircular = new DynamicCircularQueue();
+
+		dcircular.push(1);
+		dcircular.push(1);
+		dcircular.push(1);
+		dcircular.push(1);
+		dcircular.push(1);
+		dcircular.push(1);
+
+		dcircular.push(1);
+		dcircular.push(1);
+		dcircular.push(1);
+		dcircular.push(1);
+
+		dcircular.display();
 	}
 }

@@ -5,6 +5,8 @@ import java.util.Stack;
 public class ImplementQueueUsingStack {
 
 	/*
+	 * Solution 1: Using two Stacks where push operation is O(N)
+	 * 
 	 * Here, we are going to implement queue using stacks. So do this, I need two
 	 * stack to perform operations.
 	 */

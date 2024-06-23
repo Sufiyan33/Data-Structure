@@ -20,10 +20,11 @@ public class FindMaxPointsFromCards {
 
 		int lSum = 0, rSum = 0, maxSum = 0;
 
-		for (int i = 0; i < k - 1; i++) {
+		for (int i = 0; i < k; i++) {
 			lSum = lSum + arr[i];
 			maxSum = lSum;
 		}
+
 
 		int rIndex = arr.length - 1;
 
@@ -40,8 +41,10 @@ public class FindMaxPointsFromCards {
 
 	public static void main(String[] args) {
 
-		int[] arr = { 6, 2, 3, 4, 7, 2, 1, 7, 1 };
-		int k = 4;
+		// int[] arr = { 6, 2, 3, 4, 7, 2, 1, 7, 1 };
+		// int k = 4;
+		int[] arr = { 1, 2, 3, 4, 5, 6, 1 };
+		int k = 3;
 
 		int result = maxPoints(arr, k);
 		System.out.println("Maxpoints from array is :: " + result);

@@ -8,10 +8,26 @@ public class FindSubarrayWithGivenSum {
 	 */
 
 	public static void main(String[] args) {
-		int arr[] = { 1, 4, 20, 3, 10, 5 };
-		int sum = 33;
+		/*
+		 * int arr[] = { 1, 4, 20, 3, 10, 5 }; int sum = 33;
+		 */
+
+		/*
+		 * int arr[] = { 15, 2, 4, 8, 9, 5, 10, 23 }; int sum = 23;
+		 */
+
+		/*
+		 * int arr[] = { 1, 4 }; int sum = 0;
+		 */
+
+		int arr[] = { 1, 4, 0, 0, 3, 10, 5 };
+		int sum = 7;
 
 		subarray(arr, sum);
+		System.out.println("----------------------");
+
+		int res = findSubArray(arr, sum);
+		System.out.println(res);
 	}
 
 	// Brute force approach.
@@ -40,4 +56,26 @@ public class FindSubarrayWithGivenSum {
 	}
 
 	// Optimal Solution
+	public static int findSubArray(int[] arr, int sum) {
+		int l = 0, r = 0;
+		int currentSum = 0;
+
+		while (r < arr.length) {
+			currentSum += arr[r];
+
+			while (currentSum > sum) {
+				currentSum -= arr[l];
+				l = l + 1;
+			}
+
+			if (currentSum == sum) {
+				System.out.println("Find given some in between : " + l + " & " + r);
+				return 1;
+			}
+			r = r + 1;
+		}
+
+		System.out.println("No subArray is found...");
+		return 0;
+	}
 }

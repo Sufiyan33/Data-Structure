@@ -15,6 +15,10 @@ public class LongestSubstringWithAtMostKDistinctCharacters {
 		
 		System.out.println(subStringLength(str, k));
 
+		System.out.println("---------------------");
+		
+		System.out.println(subString(str, k));
+
 	}
 
 	// Brute Force approach. TC = O(N*N), SC = Log(245)
@@ -40,4 +44,32 @@ public class LongestSubstringWithAtMostKDistinctCharacters {
 		}
 		return maxlen;
 	}
+
+	// Better Solutions. TC - O(n) + O(n). SC = log(256)
+	public static int subString(String str, int k) {
+
+		int l = 0, r = 0, maxLen = 0;
+		HashMap<Character, Integer> map = new HashMap<>();
+		char[] ch = str.toCharArray();
+
+		while (r < ch.length) {
+			int currentCount = map.getOrDefault(ch[r], 0);
+			map.put(ch[r], currentCount + 1);
+
+			while (map.size() > k) {
+				int count = map.get(ch[l]);
+				if (count == 1) {
+					map.remove(ch[l]);
+				} else {
+					map.put(ch[l], count - 1);
+				}
+				l++;
+			}
+			maxLen = Math.max(maxLen, r - l + 1);
+			r++;
+		}
+		return maxLen;
+	}
+
 }
+

@@ -1,6 +1,6 @@
 package slidingWindow;
 
-public class FIndLongestSubString {
+public class FindLongestSubStringNonRepeatingChar {
 
 	/*
 	 * Find Longest substring without repeating character

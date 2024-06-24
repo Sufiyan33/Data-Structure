@@ -14,7 +14,9 @@ public class FindLongestSubStringNonRepeatingChar {
 		System.out.println(findSubString(str));
 	}
 
-	// Brute force approach.
+	/*
+	 * Brute force approach. TC = O(n * n)
+	 */
 	public static int subString(String str) {
 		int len = 0;
 		int maxLen = 0;
@@ -40,7 +42,9 @@ public class FindLongestSubStringNonRepeatingChar {
 		return maxLen;
 	}
 
-	// Optimal Approach
+	/*
+	 * Optimal Approach. TC = o(n)
+	 */
 	public static int findSubString(String str) {
 
 		int l = 0, r = 0, maxLen = 0;

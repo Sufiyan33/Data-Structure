@@ -15,6 +15,10 @@ public class MaxConsecutiveOnes {
 		int k = 2;
 
 		System.out.println(subArray(arr, k));
+
+		System.out.println("---------------------");
+
+		System.out.println(findSubArray(arr, k));
 	}
 
 	// Brute force Approach - TC = O(N*N)
@@ -41,6 +45,31 @@ public class MaxConsecutiveOnes {
 					break;
 				}
 			}
+		}
+		return maxLen;
+	}
+
+	// Optimal Solution. TC = O(N)
+	public static int findSubArray(int[] arr, int k) {
+
+		int l = 0, r = 0, maxLen = 0, zero = 0;
+
+		while (r < arr.length) {
+			if (arr[r] == 0) {
+				zero++;
+			}
+
+			while (zero > k) {
+				if (arr[l] == 0) {
+					zero--;
+				}
+				l++;
+			}
+			if (zero <= k) {
+				int len = r - l + 1;
+				maxLen = Math.max(len, maxLen);
+			}
+			r++;
 		}
 		return maxLen;
 	}

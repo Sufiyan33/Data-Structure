@@ -11,6 +11,7 @@ public class Main {
 			list.add(2 * i);
 		}
 
+		System.out.println(list.remove());
 		System.out.println(list);
 
 		System.out.println("----------For generics list-------------------------");

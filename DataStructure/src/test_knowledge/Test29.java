@@ -3,6 +3,8 @@ package test_knowledge;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Test29 {
 
@@ -31,5 +33,11 @@ public class Test29 {
 		list.addAll(listD);
 
 		System.out.println(list);
+
+		System.out.println("<-------------------------------->");
+		List<String> list1 = Stream.concat(listA.stream(), listB.stream()).collect(Collectors.toList());
+		List<String> list2 = Stream.concat(list1.stream(), listC.stream()).collect(Collectors.toList());
+		List<String> list3 = Stream.concat(list2.stream(), listD.stream()).collect(Collectors.toList());
+		System.out.println(list3);
 	}
 }

@@ -16,8 +16,8 @@ public class Sabir {
 		e1.setName("Alfaz");
 
 		Emp e2 = new Emp();
-		e2.setId(2);
-		e2.setName("Sufiyan");
+		e2.setId(1);
+		e2.setName("Alfaz");
 
 		HashMap<Emp, Integer> hm = new HashMap<>();
 		hm.put(e1, 1);
